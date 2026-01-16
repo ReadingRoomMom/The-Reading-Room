@@ -100,6 +100,7 @@
     </footer>
 
     <script>
+        // CLUB DATA
         const clubs = [
             {
                 name: "The Cozy Corner",
@@ -128,10 +129,18 @@
             }
         ];
 
+        // GET CLUB INDEX FROM URL
         const params = new URLSearchParams(window.location.search);
-        const index = parseInt(params.get("club")) || 0;
+        let index = parseInt(params.get("club"));
+
+        // DEFAULT TO FIRST CLUB IF NO PARAM OR INVALID
+        if (isNaN(index) || index < 0 || index >= clubs.length) {
+            index = 0;
+        }
+
         const club = clubs[index];
 
+        // UPDATE PAGE CONTENT
         document.getElementById("club-name").textContent = club.name;
         document.getElementById("club-description").textContent = club.description;
         document.getElementById("notes-link").href = club.notesLink;
