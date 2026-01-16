@@ -1,2 +1,2 @@
 # The-Reading-Room
-Connect with fellow readers, join curated book clubs, and share your love of stories in a cozy community.
+The Reading Room is a cozy, vintage-inspired website that connects readers, helps them form book clubs, and provides interactive reading experiences. Users submit their reading preferences via a Google Form, are matched with other readers in their area, and access club resources through Discord and curated content on the website. The site also includes a Points Store where members earn points for reading, reviewing, and annotating, redeemable for curated rewards.
