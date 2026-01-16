@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Reading Room | Book Club</title>
+
+    <style>
+        body {
+            font-family: "Georgia", serif;
+            background-color: #fdf6ee;
+            color: #3b2f2f;
+            max-width: 850px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .description {
+            font-style: italic;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        section {
+            background: #fffaf2;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 12px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 18px;
+            background-color: #b08968;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #8b6b4f;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #6b5b4b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 id="club-name">Book Club</h1>
+    <p id="club-description" class="description"></p>
+
+    <!-- CLUB CHAT SECTION -->
+    <section>
+        <h2>📖 Club Chat</h2>
+        <p>
+            Discord access will be emailed to you after you’re matched with a club.
+            This helps keep each group intentional, safe, and invite-only.
+        </p>
+    </section>
+
+    <!-- NOTES SECTION -->
+    <section>
+        <h2>✍️ Shared Annotations & Notes</h2>
+        <p>
+            Each club has a shared space for annotations, reflections, and notes.
+            Access will be provided once you’re officially placed in a club.
+        </p>
+        <a id="notes-link" class="button" href="#" target="_blank">View Notes</a>
+    </section>
+
+    <!-- BOOKS SECTION -->
+    <section>
+        <h2>📚 Book Recommendations</h2>
+        <p>
+            Your reading list will appear here once the group is finalized.
+            I’ll curate five books for your club based on everyone’s interests and pace.
+        </p>
+        <ul>
+            <li>Coming soon ✨</li>
+        </ul>
+    </section>
+
+    <footer>
+        © 2026 The Reading Room
+    </footer>
+
+    <script>
+        const clubs = [
+            {
+                name: "The Cozy Corner",
+                description: "A soft place for warm, heartfelt books, cozy vibes, and meaningful conversations.",
+                notesLink: "https://docs.google.com/document/d/1iUeQKFjKWcepeXsJABzTITbR89lye-e4VfUrUbuxPms/edit"
+            },
+            {
+                name: "Leaf & Lore",
+                description: "Where myth seekers come to discover folklore, lush worlds, and stories rich with deep themes.",
+                notesLink: "https://docs.google.com/document/d/19TrWhydjvmPlLx5Kv7Wumams80CMa-U5qL1jW3K9Mn4/edit"
+            },
+            {
+                name: "The Story Nook",
+                description: "For readers who are here for the vibes, the drama, and messy plots you have to talk about.",
+                notesLink: "https://docs.google.com/document/d/179N9TJoC8yWnzL553jFcF-V9oAileO8rfC2JLcr0UVM/edit"
+            },
+            {
+                name: "The Page & Quill",
+                description: "A space for readers who enjoy slowing down, reading closely, and unpacking every word.",
+                notesLink: "https://docs.google.com/document/d/1KivzI2Ygvt8iJcgP3mhwSQZp1LpwtJV5AsRnWa6Oxfs/edit"
+            },
+            {
+                name: "The Enchanted Parlor",
+                description: "A whimsical club for enchantment, dreamy worlds, and imaginative minds.",
+                notesLink: "https://docs.google.com/document/d/1ArqSny7MJqDw33bhStXrgWOVWXhAU715kBgm2I0xtwQ/edit"
+            }
+        ];
+
+        const params = new URLSearchParams(window.location.search);
+        const index = parseInt(params.get("club")) || 0;
+        const club = clubs[index];
+
+        document.getElementById("club-name").textContent = club.name;
+        document.getElementById("club-description").textContent = club.description;
+        document.getElementById("notes-link").href = club.notesLink;
+    </script>
+
+</body>
+</html>

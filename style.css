@@ -1,0 +1,65 @@
+/* Basic Cozy/Vintage Styles */
+body {
+    font-family: "Georgia", serif;
+    background-color: #f7f2e7;
+    color: #3e3a36;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e4dace;
+}
+
+nav a {
+    text-decoration: none;
+    color: #3e3a36;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #8c5e3c;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+section {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+button {
+    background-color: #8c5e3c;
+    color: #fff;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #a5784d;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e4dace;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 0.5rem;
+}
