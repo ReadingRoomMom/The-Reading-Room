@@ -46,8 +46,8 @@
         }
 
         ul {
-            list-style-type: square;
-            padding-left: 20px;
+            list-style-type: disc;
+            padding-left: 30px;
         }
 
         footer {
@@ -87,12 +87,9 @@
     <section>
         <h2>📚 Book Recommendations</h2>
         <p>
-            Your reading list will appear here once the group is finalized.
-            I’ll curate five books for your club based on everyone’s interests and pace.
+            A curated reading list selected to match your club’s pace and discussion style.
         </p>
-        <ul>
-            <li>Coming soon ✨</li>
-        </ul>
+        <ul id="book-list"></ul>
     </section>
 
     <footer>
@@ -100,7 +97,6 @@
     </footer>
 
     <script>
-        // CLUB DATA
         const clubs = [
             {
                 name: "The Cozy Corner",
@@ -120,7 +116,14 @@
             {
                 name: "The Page & Quill",
                 description: "A space for readers who enjoy slowing down, reading closely, and unpacking every word.",
-                notesLink: "https://docs.google.com/document/d/1KivzI2Ygvt8iJcgP3mhwSQZp1LpwtJV5AsRnWa6Oxfs/edit"
+                notesLink: "https://docs.google.com/document/d/1KivzI2Ygvt8iJcgP3mhwSQZp1LpwtJV5AsRnWa6Oxfs/edit",
+                books: [
+                    "The Yellow Wallpaper — Charlotte Perkins Gilman",
+                    "The Metamorphosis — Franz Kafka",
+                    "The Importance of Being Earnest — Oscar Wilde",
+                    "The Tell-Tale Heart — Edgar Allan Poe",
+                    "The Landlady — Roald Dahl"
+                ]
             },
             {
                 name: "The Enchanted Parlor",
@@ -129,21 +132,25 @@
             }
         ];
 
-        // GET CLUB INDEX FROM URL
         const params = new URLSearchParams(window.location.search);
-        let index = parseInt(params.get("club"));
-
-        // DEFAULT TO FIRST CLUB IF NO PARAM OR INVALID
-        if (isNaN(index) || index < 0 || index >= clubs.length) {
-            index = 0;
-        }
-
+        const index = parseInt(params.get("club")) || 0;
         const club = clubs[index];
 
-        // UPDATE PAGE CONTENT
         document.getElementById("club-name").textContent = club.name;
         document.getElementById("club-description").textContent = club.description;
         document.getElementById("notes-link").href = club.notesLink;
+
+        const bookList = document.getElementById("book-list");
+
+        if (club.books) {
+            club.books.forEach(book => {
+                const li = document.createElement("li");
+                li.textContent = book;
+                bookList.appendChild(li);
+            });
+        } else {
+            bookList.innerHTML = "<li>Coming soon ✨</li>";
+        }
     </script>
 
 </body>
